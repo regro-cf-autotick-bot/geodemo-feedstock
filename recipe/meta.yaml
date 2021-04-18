@@ -1,18 +1,18 @@
 {% set name = "geodemo" %}
-{% set version = "0.0.5" %}
+{% set version = "0.0.6" %}
 
 package:
-  name: "{{ name|lower }}"
-  version: "{{ version }}"
+  name: {{ name|lower }}
+  version: {{ version }}
 
 source:
-  url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
-  sha256: e7e430f9809057da197a7b0dbfd9e9ac2c3d869adf3f59e64c35d734bdf83156
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: 8d911441303288abba84569492d70c5240fd7579e965192cb80f1502053c6506
 
 build:
   number: 0
   noarch: python
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
@@ -30,11 +30,11 @@ test:
     - geodemo
 
 about:
-  home: "https://github.com/giswqs/geodemo"
+  home: https://github.com/giswqs/geodemo
   license: MIT
   license_family: MIT
   license_file: LICENSE
-  summary: "A Python package for interactive mapping"
+  summary: A Python package for interactive mapping
   doc_url: https://geodemo.gishub.org
   dev_url: https://github.com/giswqs/geodemo
 
