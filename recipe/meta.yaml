@@ -1,5 +1,5 @@
 {% set name = "geodemo" %}
-{% set version = "0.0.6" %}
+{% set version = "0.1.0" %}
 
 package:
   name: "{{ name|lower }}"
@@ -7,7 +7,7 @@ package:
 
 source:
   url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
-  sha256: 8d911441303288abba84569492d70c5240fd7579e965192cb80f1502053c6506
+  sha256: e0800d8ead6454ae716dd08e0a6c897ab49b532a2f86c61079f6be383a785e7c
 
 build:
   number: 0
@@ -21,10 +21,12 @@ requirements:
   run:
     - earthengine-api
     - folium
+    - geopandas
     - ipyfilechooser
     - ipyleaflet
     - pyshp
     - python >=3.6
+    - whitebox>=1.4.1
     - whiteboxgui
 
 test:
