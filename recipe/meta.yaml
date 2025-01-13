@@ -10,14 +10,14 @@ source:
   sha256: e0800d8ead6454ae716dd08e0a6c897ab49b532a2f86c61079f6be383a785e7c
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python {{ python_min }}
   run:
     - earthengine-api
     - folium
@@ -25,11 +25,13 @@ requirements:
     - ipyfilechooser
     - ipyleaflet
     - pyshp
-    - python >=3.6
+    - python >={{ python_min }}
     - whitebox >=1.4.1
     - whiteboxgui
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - geodemo
 
